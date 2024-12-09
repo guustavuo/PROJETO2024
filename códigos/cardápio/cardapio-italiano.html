@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Sabor & Arte</title>
+    <link rel="stylesheet" href="ita.css">
+</head>
+<body>
+
+    <script>
+        function adicionarAoCarrinho(nomePrato) {
+            const mensagem = document.querySelector('.mensagem-carrinho');
+            const overlay = document.querySelector('.overlay');
+
+            mensagem.textContent = `${nomePrato} foi adicionado ao carrinho!`;
+            mensagem.style.display = 'block';
+            overlay.style.display = 'block';
+
+            setTimeout(() => {
+                mensagem.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 2000); // A mensagem desaparecerá após 2 segundos
+        }
+    </script>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1>Sabor & Arte</h1>
+            <nav>
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/inicio/index.html">Início</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção do Banner -->
+    <section class="banner">
+        <img src="/images/brasil.jpg" alt="Restaurante Sabor & Arte" class="banner-img">
+        <div class="banner-text">
+            <h2>Bem-vindo ao Sabor & Arte!</h2>
+            <p>Experimente o melhor da culinária brasileira em um ambiente aconchegante.</p>
+        </div>
+    </section>
+
+    
+
+    <!-- Seção de Menu -->
+    <section class="menu">
+        <div class="container">
+            <h2>Nossos Pratos</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="/images/feijoada.jpg" alt="Prato 1">
+                    <h3>Feijoada</h3>
+                    <p>Feijoada completa com arroz, couve e laranja.</p>
+                    <span>R$ 49,90</span>
+                    <button onclick="adicionarAoCarrinho('Feijoada')">Adicionar ao Carrinho</button>
+                </div>
+                <div class="menu-item">
+                    <img src="/images/parmgiana.avif" alt="Prato 2">
+                    <h3>Frango à Parmegiana</h3>
+                    <p>Frango empanado com queijo derretido e molho de tomate.</p>
+                    <span>R$ 39,90</span>
+                    <button onclick="adicionarAoCarrinho('Frango à Parmegiana')">Adicionar ao Carrinho</button>
+                </div>
+                <div class="menu-item">
+                    <img src="/images/churrasgaucho.webp" alt="Prato 3">
+                    <h3>Churrasco Gaúcho</h3>
+                    <p>Corte de carne assada na brasa, servido com farofa e vinagrete.</p>
+                    <span>R$ 59,90</span>
+                    <button onclick="adicionarAoCarrinho('Churrasco Gaúcho')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Informações Básicas -->
+    <section class="informacoes">
+        <div class="container">
+            <h2>Informações</h2>
+            <p><strong>Endereço:</strong> Rua da Gastronomia, 123 - Centro, São Paulo, SP</p>
+            <p><strong>Telefone:</strong> (11) 1234-5678</p>
+            <p><strong>Horário de Funcionamento:</strong> Seg-Sex: 11h - 22h | Sáb-Dom: 12h - 23h</p>
+        </div>
+    </section>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Restaurante Sabor & Arte. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="overlay"></div>
+    <div class="mensagem-carrinho"></div>
+
+</body>
+</html>
