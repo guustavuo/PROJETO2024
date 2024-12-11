@@ -17,8 +17,9 @@ import cafefrancaImg from "../assets/images/cafefranca.jpg";
 
 // Componente Header
 const Header = () => {
+  
   return (
-    <header>
+    <header className="header">
       <div className="container">
         <h1>Click & Eat</h1>
         <nav>
@@ -31,12 +32,21 @@ const Header = () => {
   );
 };
 
+// Componente Footer
+const Footer = () => {
+  return (
+    <footer>
+      <p>© 2024 Click & Eat. Todos os direitos reservados.</p>
+    </footer>
+  );
+};
+
 // Componente Restaurants
 const Restaurants = () => {
   const restaurantData = [
     {
       imgSrc: feijoadaImg,
-      alt: "Restaurante Mexicano",
+      alt: "Sabor e Arte",
       title: "Sabor e Arte",
       description: "Aconchegante, com um toque artístico, ideal para jantares e festas.",
       link: "cardapio-italiano.html",
@@ -122,9 +132,7 @@ const Restaurants = () => {
 
   return (
     <div>
-      {/* Incluindo o Header no componente Restaurants */}
       <Header />
-      
       <div className="restaurant-container">
         {restaurantData.map((restaurant, index) => (
           <div className="restaurant-card" key={index}>
@@ -137,6 +145,7 @@ const Restaurants = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

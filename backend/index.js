@@ -1,13 +1,27 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-app.use(cors());
-app.use(express.json());
+async function main() {
+  // Criar um usuário
+  const usuario = await prisma.usuario.create({
+    data: {
+      nome: "João Silva",
+      email: "joao.silva@example.com",
+    },
+  });
 
-app.get('/', (req, res) => {
-    res.send('API funcionando!');
-});
+  console.log("Usuário criado:", usuario);
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+  // Buscar usuários
+  const usuarios = await prisma.usuario.findMany();
+  console.log("Lista de usuários:", usuarios);
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
