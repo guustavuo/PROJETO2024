@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Restaurants from "./components/Restaurants";
 import Cadastro from "./components/Cadastro";
+import Cardapio from "./components/Cardapio";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
 
         {/* Página de Cadastro */}
         <Route path="/cadastro" element={<Cadastro />} />
+
+        {/* Página de Cardapio */}
+        <Route path="/cardapio" element={<Cardapio />} />
 
 
         {/* Página de Restaurantes */}
