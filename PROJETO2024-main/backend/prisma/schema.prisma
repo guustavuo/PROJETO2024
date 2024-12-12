@@ -1,5 +1,5 @@
 datasource db {
-  provider = "mysql" // ou "postgresql", "sqlite", etc.
+  provider = "mysql" 
   url      = env("DATABASE_URL")
 }
 
@@ -11,5 +11,7 @@ model Usuario {
   id        Int     @id @default(autoincrement())
   nome      String
   email     String  @unique
+  senha     String
   criadoEm  DateTime @default(now())
+
 }
