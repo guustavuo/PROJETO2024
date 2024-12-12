@@ -3,8 +3,8 @@ POST http://localhost:3000/usuarios
 Content-Type: application/json
 
 {
-  "nome": "João Silva",
-  "email": "joao.silva@example.com"
+  "nome": "PEDRO Silva",
+  "email": "pedro.silva@example.com"
 }
 
 ###
@@ -25,10 +25,22 @@ Content-Type: application/json
 
 {
   "nome": "João Atualizado",
-  "email": "joao.atualizado@example.com"
+  "email": "joao.atualizado@gmail.com"
 }
 
 ###
 
 # Excluir Usuário
-DELETE http://localhost:3000/usuarios/1
+DELETE http://localhost:3000/usuarios/2
+
+
+### 
+
+# Login 
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "gustavo123@gmail.com",
+  "senha": "gustavo123"
+}

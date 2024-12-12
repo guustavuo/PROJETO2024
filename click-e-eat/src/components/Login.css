@@ -11,13 +11,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     color: #333;
 }
 
-/* Centralização perfeita */
-.container {
+
+.login-container {
     text-align: center;
+    height: 100dvh;
+    display: grid;
+    align-content: center;
 }
 
 .title {
@@ -57,7 +59,8 @@ body {
 }
 
 .login-box input[type="text"],
-.login-box input[type="password"] {
+.login-box input[type="password"],
+.login-box input[type="email"] {
     width: 100%;
     padding: 0.7em;
     margin-bottom: 1.2em;
